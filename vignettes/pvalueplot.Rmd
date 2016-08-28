@@ -1,0 +1,36 @@
+---
+title: "pvalueplot example"
+author: "James Black"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Below is example use of the function `pvalueplot`.
+
+## Look at one estimate
+
+```{r, message = F, fig.width = 6}
+episheet::pvalueplot(
+  est1.ll = 0.7,
+  est1.ul = 1.1,
+  xlabel = "Odds ratio"
+)
+```
+
+## Look at two estimates
+
+```{r, fig.width = 6}
+episheet::pvalueplot(
+  est1.ll = 0.8,
+  est1.ul = 3.8,
+  est2.ll = 1.2,
+  est2.ul = 2,
+  label1 = "Estimate 1",
+  label2 = "Estimate 2",
+  xlabel = "Relative Risk"
+)
+```
