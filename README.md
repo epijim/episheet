@@ -1,6 +1,6 @@
 # episheet
 
-R functions from Modern Epidemiology.
+R functions for Modern Epidemiology.
 
 ## Text book
 
