@@ -8,9 +8,27 @@ This package is functions to support the text book
 
 > Modern Epidemiology, Second Edition, by Kenneth J. Rothman and Sander Greenland.
 
-## Website
+Website: [krothman.org](http://krothman.org/)
 
-[krothman.org](http://krothman.org/)
+## Functions
+
+**Note** - only 1 function has been mapped to R so far!
+
+* Rate Data				
+* Case-control Power				
+* Matched Case-control data						
+* Risk Data				
+* Study Size				
+* O. R. Exact						
+* Case-control Data				
+* Quickcalc				
+* P-Value Functions
+    + `pvalueplot` Plot a p-value function
+* Standardization				
+* Seasonal Analysis				
+* Meta-Analysis (contributed by T. Andersson & A. Ahlbom)						
+* Cohort Power				
+* Life Table										
 
 ## Complete excel tool
 
