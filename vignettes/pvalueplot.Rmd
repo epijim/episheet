@@ -11,6 +11,10 @@ vignette: >
 
 Below is example use of the function `pvalueplot`.
 
+```{r}
+library("episheet")
+```
+
 ## Look at one estimate
 
 ```{r, message = F, fig.width = 6}

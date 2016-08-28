@@ -19,6 +19,9 @@
 #' @param xlabel The base location. Defaults to the RWDS folder, gran-test.roche.com is at /data/gran/testout/
 #' @keywords R Rothman pvalues episheet
 #' @export
+#' @importFrom magrittr "%>%"
+#' @importFrom graphics "curve"
+#' @importFrom stats "qnorm"
 #' @examples
 #' pvalueplot(
 #'   est1.ll = 0.9,
@@ -45,8 +48,11 @@ pvalueplot <- function(
   label2 = "Estimate 2",
   xlabel = "Relative Risk"
 ){
-  require(dplyr)
-  require(ggplot2)
+  # fake global variables to pass CMD check
+  pvalue <- NULL
+  updown <- NULL
+  xvalue <- NULL
+  zvalue <- NULL
 
   # calculate relative risk
     # Gardner M J and Altman D G. Statisitics with confidence.
@@ -77,7 +83,7 @@ pvalueplot <- function(
     # formula changes if going up or down x values
     updown = c(rep("up",100),rep("down",99))
   ) %>%
-    mutate(
+    dplyr::mutate(
       zvalue = qnorm(1 - pvalue/2)
     )
 
@@ -86,7 +92,7 @@ pvalueplot <- function(
   if (is.na(est2.ll) | is.na(est2.ul)) {
 
     plot.data <- d.frame %>%
-      mutate(
+      dplyr::mutate(
         curve1 = ifelse(
           updown == "up",
           jb_getcurveup(
@@ -103,10 +109,10 @@ pvalueplot <- function(
     # plot it
     # breaks
     if (est1.ul < 10) xbreaks <- c(0,1,5,10)
-    if (est1.ul >= 10) xbreaks <- waiver()
+    if (est1.ul >= 10) xbreaks <- ggplot2::waiver()
 
     plotout <- ggplot2::ggplot(plot.data,
-                      aes(curve1, pvalue)
+                               ggplot2::aes_string('curve1', 'pvalue')
     ) +
       ggplot2::geom_line(size = 2, colour = "#0033cc") +
       ggplot2::scale_x_log10(
@@ -128,7 +134,7 @@ pvalueplot <- function(
   ### If two estimates ---------------------------------------------------------------
   if (!is.na(est2.ll) | !is.na(est2.ul)) {
     d.frame <- d.frame %>%
-      mutate(
+      dplyr::mutate(
         curve1 = ifelse(
           updown == "up",
           jb_getcurveup(
@@ -155,14 +161,15 @@ pvalueplot <- function(
 
     # reshape data
     plot.data <- d.frame %>%
-      select(-c(zvalue,updown)) %>%
+      dplyr::select(-c(zvalue,updown)) %>%
       tidyr::gather(curve,xvalue,-pvalue)
 
     # plot it
     plotout <- ggplot2::ggplot(plot.data,
-                      aes(xvalue,
-                          pvalue,
-                          colour = curve)
+                          ggplot2::aes_string(
+                          'xvalue',
+                          'pvalue',
+                          colour = 'curve')
     ) +
       ggplot2::geom_line(size = 2) +
       ggplot2::scale_x_log10() +
