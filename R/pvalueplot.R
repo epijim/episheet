@@ -16,7 +16,9 @@
 #' @param est2.ul Upper confidence interval of estimate 2 (optional)
 #' @param label1 If using two estimates, name the 1st
 #' @param label2 If using two estimates, name the 2nd
-#' @param xlabel The base location. Defaults to the RWDS folder, gran-test.roche.com is at /data/gran/testout/
+#' @param xlabel The x axis label
+#' @param citype Choose between '95%CI', '90%CI' or '99%CI'
+#'
 #' @keywords R Rothman pvalues episheet
 #' @export
 #' @importFrom magrittr "%>%"
@@ -36,7 +38,8 @@
 #'   est2.ul = 2,
 #'   label1 = "Estimate 1",
 #'   label2 = "Estimate 2",
-#'   xlabel = "Relative Risk"
+#'   xlabel = "Relative Risk",
+#'   citype = "95%CI"
 #' )
 
 pvalueplot <- function(
@@ -46,13 +49,24 @@ pvalueplot <- function(
   est2.ul = NA,
   label1 = "Estimate 1",
   label2 = "Estimate 2",
-  xlabel = "Relative Risk"
+  xlabel = "Relative Risk",
+  citype = "95%CI"
 ){
   # fake global variables to pass CMD check
   pvalue <- NULL
   updown <- NULL
   xvalue <- NULL
   zvalue <- NULL
+
+  # which ci type?
+
+  citype.pow <- ifelse(
+    citype == "90%CI", 3.29,
+    ifelse(citype == "99%CI", 5.16,
+           3.84)
+  )
+
+  message(paste("Confidence interval type is ",citype))
 
   # calculate relative risk
     # Gardner M J and Altman D G. Statisitics with confidence.
@@ -62,8 +76,8 @@ pvalueplot <- function(
   }
 
   # calculate standard errors
-  jb_getse <- function(ll,ul){
-    (log(ul) - log(ll))/3.84
+  jb_getse <- function(ll,ul,citype.pow){
+    (log(ul) - log(ll))/citype.pow
   }
 
   # calculate curve value
@@ -128,11 +142,11 @@ pvalueplot <- function(
           updown == "up",
           jb_getcurveup(
             jb_getrr(est1.ll,est1.ul),
-            jb_getse(est1.ll,est1.ul),
+            jb_getse(est1.ll,est1.ul,citype.pow),
             zvalue),
           jb_getcurvedown(
             jb_getrr(est1.ll,est1.ul),
-            jb_getse(est1.ll,est1.ul),
+            jb_getse(est1.ll,est1.ul,citype.pow),
             zvalue)
         )
       )
@@ -169,22 +183,22 @@ pvalueplot <- function(
           updown == "up",
           jb_getcurveup(
             jb_getrr(est1.ll,est1.ul),
-            jb_getse(est1.ll,est1.ul),
+            jb_getse(est1.ll,est1.ul, citype.pow),
             zvalue),
           jb_getcurvedown(
             jb_getrr(est1.ll,est1.ul),
-            jb_getse(est1.ll,est1.ul),
+            jb_getse(est1.ll,est1.ul, citype.pow),
             zvalue)
         ),
         curve2 = ifelse(
           updown == "up",
           jb_getcurveup(
             jb_getrr(est2.ll,est2.ul),
-            jb_getse(est2.ll,est2.ul),
+            jb_getse(est2.ll,est2.ul, citype.pow),
             zvalue),
           jb_getcurvedown(
             jb_getrr(est2.ll,est2.ul),
-            jb_getse(est2.ll,est2.ul),
+            jb_getse(est2.ll,est2.ul, citype.pow),
             zvalue)
         )
       )
