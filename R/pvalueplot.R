@@ -6,7 +6,6 @@
 #' Rothman, Kenneth J et al.
 #' The Lancet , Volume 353 , Issue 9159 , 1184
 #'
-#'
 #' @section Bugs:
 #' ADDL LINK TO REPO: \url{http://ADDL LINK TO REPO}
 #'
@@ -17,8 +16,7 @@
 #' @param label1 If using two estimates, name the 1st
 #' @param label2 If using two estimates, name the 2nd
 #' @param xlabel The x axis label
-#' @param citype Choose between '95%CI', '90%CI' or '99%CI'
-#'
+#' @param citype Choose between '95\%CI', '90\%CI' or '99\%CI'
 #' @keywords R Rothman pvalues episheet
 #' @export
 #' @importFrom magrittr "%>%"
@@ -242,4 +240,3 @@ pvalueplot <- function(
   }
   return(plotout)
 }
-

@@ -23,7 +23,7 @@ pvalueplot(est1.ll, est1.ul, est2.ll = NA, est2.ul = NA,
 
 \item{xlabel}{The x axis label}
 
-\item{citype}{Choose between '95%CI', '90%CI' or '99%CI'}
+\item{citype}{Choose between '95\%CI', '90\%CI' or '99\%CI'}
 }
 \description{
 Plot the p-value function for one or two confidence interval pairs.
