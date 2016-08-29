@@ -7,7 +7,7 @@
 #' The Lancet , Volume 353 , Issue 9159 , 1184
 #'
 #' @section Bugs:
-#' ADDL LINK TO REPO: \url{http://ADDL LINK TO REPO}
+#' Code repo: \url{https://github.com/epijim/episheet}
 #'
 #' @param est1.ll Lower confidence interval of estimate 1
 #' @param est1.ul Upper confidence interval of estimate 1

@@ -34,7 +34,7 @@ The Lancet , Volume 353 , Issue 9159 , 1184
 }
 \section{Bugs}{
 
-ADDL LINK TO REPO: \url{http://ADDL LINK TO REPO}
+Code repo: \url{https://github.com/epijim/episheet}
 }
 \examples{
 pvalueplot(
