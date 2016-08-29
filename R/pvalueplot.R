@@ -87,6 +87,37 @@ pvalueplot <- function(
       zvalue = qnorm(1 - pvalue/2)
     )
 
+  # breaks if less than 10 (in plot)
+  jb_makebreaks <- function(
+    xvalue
+  ){
+    minvalue <- min(xvalue, na.rm = T)
+    maxvalue <- max(xvalue, na.rm = T)
+
+    if (minvalue > 0.5) minvalue <- 0.49
+
+    maxvalue <- ifelse(
+      maxvalue < 3,
+      3,
+      ifelse(
+        maxvalue < 5, 5,
+        ifelse(
+          maxvalue < 10, 10,
+          maxvalue
+        )
+      )
+      )
+
+    xlimits <- c(minvalue,maxvalue)
+
+    return(xlimits)
+  }
+
+  xbreaks <- c(0,0.5,1,1.5,2,5,10,15)
+
+
+
+
   # calculate the curves ------------------------------------------------
   ### If one estimate -------------------------------------------------
   if (is.na(est2.ll) | is.na(est2.ul)) {
@@ -107,17 +138,12 @@ pvalueplot <- function(
       )
 
     # plot it
-    # breaks
-    if (est1.ul < 10) xbreaks <- c(0,1,5,10)
-    if (est1.ul >= 10) xbreaks <- ggplot2::waiver()
+    xlimits <- jb_makebreaks(plot.data$curve1)
 
     plotout <- ggplot2::ggplot(plot.data,
                                ggplot2::aes_string('curve1', 'pvalue')
     ) +
       ggplot2::geom_line(size = 2, colour = "#0033cc") +
-      ggplot2::scale_x_log10(
-        breaks = xbreaks
-      ) +
       ggplot2::theme_bw() +
       ggplot2::ylab("p-value") +
       ggplot2::xlab(xlabel) +
@@ -128,7 +154,11 @@ pvalueplot <- function(
       ggplot2::geom_hline(
         yintercept = 0.05,
         colour = "red",
-        linetype = 2)
+        linetype = 2) +
+      ggplot2::scale_x_log10(
+        breaks = xbreaks,
+        limits = xlimits
+      )
   }
 
   ### If two estimates ---------------------------------------------------------------
@@ -165,6 +195,8 @@ pvalueplot <- function(
       tidyr::gather(curve,xvalue,-pvalue)
 
     # plot it
+    xlimits <- jb_makebreaks(plot.data$xvalue)
+
     plotout <- ggplot2::ggplot(plot.data,
                           ggplot2::aes_string(
                           'xvalue',
@@ -172,7 +204,6 @@ pvalueplot <- function(
                           colour = 'curve')
     ) +
       ggplot2::geom_line(size = 2) +
-      ggplot2::scale_x_log10() +
       ggplot2::theme_bw() +
       ggplot2::ylab("p-value") +
       ggplot2::xlab(xlabel) +
@@ -189,7 +220,11 @@ pvalueplot <- function(
         labels = c(label1, label2),
         values = c("#0033cc", "#00cc00")
       ) +
-      ggplot2::theme(legend.position = "top")
+      ggplot2::theme(legend.position = "top") +
+      ggplot2::scale_x_log10(
+        breaks = xbreaks,
+        limits = xlimits
+      )
   }
   return(plotout)
 }
