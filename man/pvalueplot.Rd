@@ -5,7 +5,8 @@
 \title{Plot the p-value function}
 \usage{
 pvalueplot(est1.ll, est1.ul, est2.ll = NA, est2.ul = NA,
-  label1 = "Estimate 1", label2 = "Estimate 2", xlabel = "Relative Risk")
+  label1 = "Estimate 1", label2 = "Estimate 2", xlabel = "Relative Risk",
+  citype = "95\%CI")
 }
 \arguments{
 \item{est1.ll}{Lower confidence interval of estimate 1}
@@ -20,7 +21,9 @@ pvalueplot(est1.ll, est1.ul, est2.ll = NA, est2.ul = NA,
 
 \item{label2}{If using two estimates, name the 2nd}
 
-\item{xlabel}{The base location. Defaults to the RWDS folder, gran-test.roche.com is at /data/gran/testout/}
+\item{xlabel}{The x axis label}
+
+\item{citype}{Choose between '95%CI', '90%CI' or '99%CI'}
 }
 \description{
 Plot the p-value function for one or two confidence interval pairs.
@@ -47,7 +50,8 @@ pvalueplot(
   est2.ul = 2,
   label1 = "Estimate 1",
   label2 = "Estimate 2",
-  xlabel = "Relative Risk"
+  xlabel = "Relative Risk",
+  citype = "95\%CI"
 )
 }
 \keyword{R}
