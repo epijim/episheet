@@ -24,6 +24,7 @@ Website: [krothman.org](http://krothman.org/)
 * Quickcalc				
 * P-Value Functions
     + `pvalueplot` Plot a p-value function
+    + [Example of use](https://cran.r-project.org/web/packages/episheet/vignettes/pvalueplot.html)
 * Standardization				
 * Seasonal Analysis				
 * Meta-Analysis (contributed by T. Andersson & A. Ahlbom)						
