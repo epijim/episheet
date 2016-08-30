@@ -1,13 +1,13 @@
 Package: episheet
 Type: Package
-Title: Rothman's epitools
+Title: Rothman's Episheet
 Version: 0.1.0
 Authors@R: c(
     person("James", "Black", , "james@epijim.uk", c("aut", "cre")),
     person("Ken Rothman", role = "cph")
     )
 Maintainer: James Black <james@epijim.uk>
-Description: R functions from Modern Epidemiology, Second Edition, by Kenneth J.Rothman and Sander Greenland.
+Description: Episheet is a collection of R functions supporting the text book Modern Epidemiology, Second Edition, by Kenneth J.Rothman and Sander Greenland.
 License: GPL (>= 2)
 URL: https://github.com/epijim/episheet
 BugReports: https://github.com/epijim/episheet/issues

@@ -1,3 +1,10 @@
+## Resubmission
+
+This is a resubmission.
+
+* The title and description have been edited to show that episheet is a companion to a textbook. 
+* Mention of epitools has been removed. Epitools does not exist, and was the package authors mistake.
+
 ## Test environments
 * local win install, R 3.1.2
 
