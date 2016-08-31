@@ -17,6 +17,9 @@
 #' @param label2 If using two estimates, name the 2nd
 #' @param xlabel The x axis label
 #' @param citype Choose between '95\%CI', '90\%CI' or '99\%CI'
+#' @param labelsize Change size of label
+#' @param functionwidth Change width of pvalue function line
+#' @param referencewidth Change width of reference lines
 #' @keywords R Rothman pvalues episheet
 #' @export
 #' @importFrom magrittr "%>%"
@@ -48,7 +51,10 @@ pvalueplot <- function(
   label1 = "Estimate 1",
   label2 = "Estimate 2",
   xlabel = "Relative Risk",
-  citype = "95%CI"
+  citype = "95%CI",
+  labelsize = NULL,
+  functionwidth = 1,
+  referencewidth = 1
 ){
   # fake global variables to pass CMD check
   pvalue <- NULL
@@ -64,11 +70,17 @@ pvalueplot <- function(
            3.84)
   )
 
+  citype.pval <- ifelse(
+    citype == "90%CI", 0.1,
+    ifelse(citype == "99%CI", 0.01,
+           0.05)
+  )
+
   message(paste("Confidence interval type is ",citype))
 
   # calculate relative risk
-    # Gardner M J and Altman D G. Statisitics with confidence.
-    # BMJ publications. Reprint 1994 p 51-52
+  # Gardner M J and Altman D G. Statisitics with confidence.
+  # BMJ publications. Reprint 1994 p 51-52
   jb_getrr <- function(ll,ul){
     exp((log(ll) + log(ul))/2)
   }
@@ -118,7 +130,7 @@ pvalueplot <- function(
           maxvalue
         )
       )
-      )
+    )
 
     xlimits <- c(minvalue,maxvalue)
 
@@ -155,21 +167,30 @@ pvalueplot <- function(
     plotout <- ggplot2::ggplot(plot.data,
                                ggplot2::aes_string('curve1', 'pvalue')
     ) +
-      ggplot2::geom_line(size = 2, colour = "#0033cc") +
+      ggplot2::geom_line(size = functionwidth, colour = "#0033cc") +
       ggplot2::theme_bw() +
+      ggplot2::theme(
+        axis.text = ggplot2::element_text(size = labelsize),
+        axis.title = ggplot2::element_text(size = labelsize)
+      ) +
       ggplot2::ylab("p-value") +
       ggplot2::xlab(xlabel) +
       ggplot2::geom_vline(
+        size = referencewidth,
         xintercept = 1,
         colour = "red",
         linetype = 2) +
       ggplot2::geom_hline(
-        yintercept = 0.05,
+        size = referencewidth,
+        yintercept = citype.pval,
         colour = "red",
         linetype = 2) +
       ggplot2::scale_x_log10(
         breaks = xbreaks,
         limits = xlimits
+      ) +
+      ggplot2::scale_y_continuous(
+        expand = c(0, 0), limits = c(0,1)
       )
   }
 
@@ -210,21 +231,27 @@ pvalueplot <- function(
     xlimits <- jb_makebreaks(plot.data$xvalue)
 
     plotout <- ggplot2::ggplot(plot.data,
-                          ggplot2::aes_string(
-                          'xvalue',
-                          'pvalue',
-                          colour = 'curve')
+                               ggplot2::aes_string(
+                                 'xvalue',
+                                 'pvalue',
+                                 colour = 'curve')
     ) +
-      ggplot2::geom_line(size = 2) +
+      ggplot2::geom_line(size = functionwidth) +
       ggplot2::theme_bw() +
+      ggplot2::theme(
+        axis.text = ggplot2::element_text(size = labelsize),
+        axis.title = ggplot2::element_text(size = labelsize)
+      ) +
       ggplot2::ylab("p-value") +
       ggplot2::xlab(xlabel) +
       ggplot2::geom_vline(
+        size = referencewidth,
         xintercept = 1,
         colour = "red",
         linetype = 2) +
       ggplot2::geom_hline(
-        yintercept = 0.05,
+        size = referencewidth,
+        yintercept = citype.pval,
         colour = "red",
         linetype = 2) +
       ggplot2::scale_color_manual(
@@ -236,6 +263,9 @@ pvalueplot <- function(
       ggplot2::scale_x_log10(
         breaks = xbreaks,
         limits = xlimits
+      ) +
+      ggplot2::scale_y_continuous(
+        expand = c(0, 0), limits = c(0,1)
       )
   }
   return(plotout)

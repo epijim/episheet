@@ -6,7 +6,8 @@
 \usage{
 pvalueplot(est1.ll, est1.ul, est2.ll = NA, est2.ul = NA,
   label1 = "Estimate 1", label2 = "Estimate 2", xlabel = "Relative Risk",
-  citype = "95\%CI")
+  citype = "95\%CI", labelsize = NULL, functionwidth = 1,
+  referencewidth = 1)
 }
 \arguments{
 \item{est1.ll}{Lower confidence interval of estimate 1}
@@ -24,6 +25,12 @@ pvalueplot(est1.ll, est1.ul, est2.ll = NA, est2.ul = NA,
 \item{xlabel}{The x axis label}
 
 \item{citype}{Choose between '95\%CI', '90\%CI' or '99\%CI'}
+
+\item{labelsize}{Change size of label}
+
+\item{functionwidth}{Change width of pvalue function line}
+
+\item{referencewidth}{Change width of reference lines}
 }
 \description{
 Plot the p-value function for one or two confidence interval pairs.
