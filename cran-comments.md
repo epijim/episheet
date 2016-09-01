@@ -1,16 +1,15 @@
-## Resubmission
+## Version bump
 
-This is a re-resubmission.
+This is a move from 0.1 to 0.2.
 
-* The title and description have been edited to show that episheet is a companion to a textbook. 
-* Mention of epitools has been removed. Epitools does not exist, and was the package authors mistake.
-
-* ISBN and book website have been added.
+No new functions, but additional options on existing functions after user requests.
 
 ## Test environments
 * local win install, R 3.1.2
+* linux via current travis-ci default
 
 ## R CMD check results
 There were no ERRORs or WARNINGs or NOTES.
 
-This is the first submission.
+
+

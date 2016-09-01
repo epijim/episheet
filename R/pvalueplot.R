@@ -17,7 +17,7 @@
 #' @param label2 If using two estimates, name the 2nd
 #' @param xlabel The x axis label
 #' @param citype Choose between '95\%CI', '90\%CI' or '99\%CI'
-#' @param labelsize Change size of label
+#' @param labelsize Change size of labels
 #' @param functionwidth Change width of pvalue function line
 #' @param referencewidth Change width of reference lines
 #' @keywords R Rothman pvalues episheet
@@ -240,7 +240,8 @@ pvalueplot <- function(
       ggplot2::theme_bw() +
       ggplot2::theme(
         axis.text = ggplot2::element_text(size = labelsize),
-        axis.title = ggplot2::element_text(size = labelsize)
+        axis.title = ggplot2::element_text(size = labelsize),
+        legend.text = ggplot2::element_text(size = labelsize)
       ) +
       ggplot2::ylab("p-value") +
       ggplot2::xlab(xlabel) +
@@ -255,7 +256,7 @@ pvalueplot <- function(
         colour = "red",
         linetype = 2) +
       ggplot2::scale_color_manual(
-        name = "Estimate: ",
+        name = "",
         labels = c(label1, label2),
         values = c("#0033cc", "#00cc00")
       ) +

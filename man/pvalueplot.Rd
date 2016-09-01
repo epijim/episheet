@@ -26,7 +26,7 @@ pvalueplot(est1.ll, est1.ul, est2.ll = NA, est2.ul = NA,
 
 \item{citype}{Choose between '95\%CI', '90\%CI' or '99\%CI'}
 
-\item{labelsize}{Change size of label}
+\item{labelsize}{Change size of labels}
 
 \item{functionwidth}{Change width of pvalue function line}
 
