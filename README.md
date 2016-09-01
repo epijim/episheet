@@ -4,13 +4,24 @@ R functions for Modern Epidemiology.
 
 ## CRAN details
 
-Link to CRAN entry: http://cran.r-project.org/package=episheet
-
-Current status of package build on unix: [![Build Status](https://travis-ci.org/epijim/episheet.svg?branch=master)](https://travis-ci.org/epijim/episheet)
-
-Current version on CRAN: [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/episheet)](http://cran.r-project.org/package=episheet)
-
-Total downloads: ![](http://cranlogs.r-pkg.org/badges/grand-total/episheet)
+<table>
+  <tr>
+    <td><strong>Link to CRAN entry</strong></td>
+    <td><a href="http://cran.r-project.org/package=episheet"><strong>http://cran.r-project.org/package=episheet</strong></a></td>
+  </tr>
+  <tr>
+    <td><strong>Unix build status of last commit</strong><p><sup>Passing if devtools::check() error free</sup></p></td>
+    <td><img src="https://travis-ci.org/epijim/episheet.svg?branch=master" alt="Badge"></td>
+  </tr>
+  <tr>
+    <td><strong>Current version on CRAN</strong><p><sup>This repo may be ahead of CRAN</sup></td>
+    <td><img src="http://www.r-pkg.org/badges/version/episheet" alt="Badge"></td>
+  </tr>
+  <tr>
+    <td><strong>Total downloads from CRAN</strong><p><sup>Because....vanity</sup></p></td>
+    <td><img src="http://cranlogs.r-pkg.org/badges/grand-total/episheet" alt="Badge"></td>
+  </tr>
+</table>
 
 ## Text book
 
