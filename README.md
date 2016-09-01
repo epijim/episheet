@@ -2,6 +2,10 @@
 
 R functions for Modern Epidemiology.
 
+## CRAN details
+
+Link to CRAN entry: http://cran.r-project.org/package=episheet
+
 Current status of package build on unix: [![Build Status](https://travis-ci.org/epijim/episheet.svg?branch=master)](https://travis-ci.org/epijim/episheet)
 
 Current version on CRAN: [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/episheet)](http://cran.r-project.org/package=episheet)
@@ -14,7 +18,7 @@ This package is functions to support the text book
 
 > Modern Epidemiology, Second Edition, by Kenneth J. Rothman and Sander Greenland.
 
-Website: [krothman.org](http://krothman.org/)
+Textbook website: [krothman.org](http://krothman.org/)
 
 ## Functions
 
