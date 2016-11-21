@@ -21,6 +21,12 @@ R functions for Modern Epidemiology.
     <td><strong>Total downloads from CRAN</strong><p><sup>Because....vanity</sup></p></td>
     <td><img src="http://cranlogs.r-pkg.org/badges/grand-total/episheet" alt="Badge"></td>
   </tr>
+   <tr>
+    <td><strong>Documentation</strong><p><sup>Click badge to see.</sup></p></td>
+    <td><a href="http://www.rdocumentation.org/packages/episheet">
+<img src="http://www.rdocumentation.org/badges/version/episheet" alt="http://www.rdocumentation.org/packages/episheet"></td>
+    </a>
+  </tr>
 </table>
 
 ## Text book
