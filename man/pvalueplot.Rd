@@ -43,6 +43,7 @@ The Lancet , Volume 353 , Issue 9159 , 1184
 
 Code repo: \url{https://github.com/epijim/episheet}
 }
+
 \examples{
 pvalueplot(
   est1.ll = 0.9,
@@ -65,4 +66,3 @@ pvalueplot(
 \keyword{Rothman}
 \keyword{episheet}
 \keyword{pvalues}
-
