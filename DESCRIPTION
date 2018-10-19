@@ -4,7 +4,9 @@ Title: Rothman's Episheet
 Version: 0.2.0
 Authors@R: c(
     person("James", "Black", , "james@epijim.uk", c("aut", "cre")),
-    person("Ken Rothman", role = "cph")
+    person("Ken Rothman", role = "cph"),
+    person("Simon", "Thelwall", , "simon.thelwall@gmail.com", c("ctb"), 
+      comment = c(ORCID = "0000-0002-0434-2724"))
     )
 Maintainer: James Black <james@epijim.uk>
 Description: A collection of R functions supporting the text book

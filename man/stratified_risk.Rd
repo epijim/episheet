@@ -7,13 +7,15 @@
 stratified_risk(data, exposure, outcome, stratifier, ci_level = 95)
 }
 \arguments{
+\item{data}{A dataframe providing the exposure, outcome and stratifying variable}
+
 \item{exposure}{binary variable giving the exposure status}
 
 \item{outcome}{binary variable giving the outcome status}
 
-\item{ci_level}{variable giving the limits for the confidence interval}
+\item{stratifier}{stratifying variable}
 
-\item{stratum}{stratifying variable}
+\item{ci_level}{variable giving the limits for the confidence interval}
 }
 \value{
 A dataframe giving an MH-adjusted risk ratio

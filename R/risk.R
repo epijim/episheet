@@ -20,6 +20,10 @@
 
 risk <- function(data, exposure, outcome, ci_level = 95){
 
+  #Fixing undefined global variable issue from CRAN check.
+  # hacky though
+  n_var <- base_risk <- risk_ratio <- risk_diff <- n<- NULL
+
   exposure <- dplyr::enquo(exposure)
   outcome <- dplyr::enquo(outcome)
 
