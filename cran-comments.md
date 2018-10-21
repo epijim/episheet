@@ -6,12 +6,12 @@ Functions were added for calculating risk ratios, risk differences and MH risk r
 
 ## Test environments
 
-* local win install, R 3.1.2
+* local osx install, R 3.1.2
 * linux via current travis-ci default
 
 ## R CMD check results
 
-There were no ERRORs or WARNINGs or NOTES.
+There were no ERRORs or WARNINGs and one NOTE (use of .).
 
 
 
