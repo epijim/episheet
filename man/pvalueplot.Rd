@@ -5,9 +5,9 @@
 \title{Plot the p-value function}
 \usage{
 pvalueplot(est1.ll, est1.ul, est2.ll = NA, est2.ul = NA,
-  label1 = "Estimate 1", label2 = "Estimate 2", xlabel = "Relative Risk",
-  citype = "95\%CI", labelsize = NULL, functionwidth = 1,
-  referencewidth = 1)
+  label1 = "Estimate 1", label2 = "Estimate 2",
+  xlabel = "Relative Risk", citype = "95\%CI", labelsize = NULL,
+  functionwidth = 1, referencewidth = 1)
 }
 \arguments{
 \item{est1.ll}{Lower confidence interval of estimate 1}

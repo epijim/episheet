@@ -17,6 +17,8 @@
 
 stratified_risk <- function(data, exposure, outcome, stratifier, ci_level = 95){
 
+  . <- NULL
+
   # Fixing CRAN check undefined global variable warning
   aN0T <-  base_risk <-  bN1T <-  exposed <-  lci <-  m1n1n0 <- rrmh <- NULL
   Tc <- Te <- Tec <- Ts <- Tu <- Tuc <- n <- uci <- var <- NULL
