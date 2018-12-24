@@ -65,8 +65,9 @@ risk <- function(data, exposure, outcome, ci_level = 95){
   # sd_ln_rr = ( 1/A1 - 1/N1 + 1/A0 - 1/N0) ^ (1/2)
   sd_ln_rr <- (1/A1 - 1/sum(data[, rlang::quo_name(exposure)]) + 1/A0 - 1/N0 ) ^ (1/2)
   # sd_ln_rd = ( ((A1*B1)/(N1^2 * (N1 - 1))) + ( (A0*B0)/ (N0 ^ 2 * (N0 - 1) ) ) )^(1/2)
-  sd_ln_rd <-( ((A1*B1)/(N1^2 * (N1 - 1))) + ( (A0*B0)/ (N0 ^ 2 * (N0 - 1) ) ) ) ^ (1/2)
-  z <- abs(qnorm((100 - ci_level)/100))
+  sd_rd <-( ((A1*B1)/(N1^2 * (N1 - 1))) + ( (A0*B0)/ (N0 ^ 2 * (N0 - 1) ) ) ) ^ (1/2)
+  # z <- abs(qnorm((100 - ci_level)/100))
+  z <- abs(qnorm(((100 - 95)/2)/100))
 
 
   z <- data %>%
@@ -79,8 +80,8 @@ risk <- function(data, exposure, outcome, ci_level = 95){
                   rr_lci = exp(log(risk_ratio) - z * sd_ln_rr),
                   rr_uci = exp(log(risk_ratio) + z * sd_ln_rr),
                   risk_diff = risk - base_risk,
-                  rd_lci = exp(log(risk_diff) - z * sd_ln_rd),
-                  rd_uci = exp(log(risk_diff) + z * sd_ln_rd)
+                  rd_lci = risk_diff - (z * sd_rd)*100,
+                  rd_uci = risk_diff + (z * sd_rd)*100
                   ) %>%
     dplyr::select(-base_risk)
   return(z)

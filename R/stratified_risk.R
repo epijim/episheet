@@ -70,7 +70,7 @@ stratified_risk <- function(data, exposure, outcome, stratifier, ci_level = 95){
     dplyr::mutate(aN0T = Tec * Tu / Ts,
                   bN1T = Tuc * Te / Ts,
                   m1n1n0 = (Tc * Te * Tu) / Ts^2 - Tec * Tuc / Ts
-                  )
+    )
 
   # RRmh in sheet is AH18/AI18
 
@@ -93,7 +93,7 @@ stratified_risk <- function(data, exposure, outcome, stratifier, ci_level = 95){
       # sum_bN1T = sum(bN1T),
       lci = exp(log(rrmh) - z * sqrt(var)),
       uci = exp(log(rrmh) + z * sqrt(var)),
-      ) %>%
+    ) %>%
     dplyr::select(!!stratifier, n, exposed, outcome, rrmh, var, lci, uci)
   return(z)
 }

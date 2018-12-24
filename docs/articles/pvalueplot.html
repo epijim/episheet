@@ -8,8 +8,8 @@
 <title>pvalueplot example • episheet</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="pvalueplot example">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><meta property="og:title" content="pvalueplot example">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -82,7 +82,7 @@
       <h1>pvalueplot example</h1>
                         <h4 class="author">James Black</h4>
             
-            <h4 class="date">2018-10-21</h4>
+            <h4 class="date">2018-12-24</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/epijim/episheet/blob/master/vignettes/pvalueplot.Rmd"><code>vignettes/pvalueplot.Rmd</code></a></small>
       <div class="hidden name"><code>pvalueplot.Rmd</code></div>
@@ -92,29 +92,29 @@
     
     
 <p>Below is example use of the function <code>pvalueplot</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(<span class="st">"episheet"</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"episheet"</span>)</code></pre></div>
 <div id="look-at-one-estimate" class="section level2">
 <h2 class="hasAnchor">
 <a href="#look-at-one-estimate" class="anchor"></a>Look at one estimate</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">episheet<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/episheet/topics/pvalueplot">pvalueplot</a></span>(</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="dt">est1.ll =</span> <span class="fl">0.7</span>,</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="dt">est1.ul =</span> <span class="fl">1.1</span>,</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="dt">xlabel =</span> <span class="st">"Odds ratio"</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">episheet<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/episheet/topics/pvalueplot">pvalueplot</a></span>(
+  <span class="dt">est1.ll =</span> <span class="fl">0.7</span>,
+  <span class="dt">est1.ul =</span> <span class="fl">1.1</span>,
+  <span class="dt">xlabel =</span> <span class="st">"Odds ratio"</span>
+)</code></pre></div>
 <p><img src="pvalueplot_files/figure-html/unnamed-chunk-2-1.png" width="576"></p>
 </div>
 <div id="look-at-two-estimates" class="section level2">
 <h2 class="hasAnchor">
 <a href="#look-at-two-estimates" class="anchor"></a>Look at two estimates</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">episheet<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/episheet/topics/pvalueplot">pvalueplot</a></span>(</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="dt">est1.ll =</span> <span class="fl">0.8</span>,</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="dt">est1.ul =</span> <span class="fl">3.8</span>,</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">  <span class="dt">est2.ll =</span> <span class="fl">1.2</span>,</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">  <span class="dt">est2.ul =</span> <span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">  <span class="dt">label1 =</span> <span class="st">"Estimate 1"</span>,</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">  <span class="dt">label2 =</span> <span class="st">"Estimate 2"</span>,</a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">  <span class="dt">xlabel =</span> <span class="st">"Relative Risk"</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9">)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">episheet<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/episheet/topics/pvalueplot">pvalueplot</a></span>(
+  <span class="dt">est1.ll =</span> <span class="fl">0.8</span>,
+  <span class="dt">est1.ul =</span> <span class="fl">3.8</span>,
+  <span class="dt">est2.ll =</span> <span class="fl">1.2</span>,
+  <span class="dt">est2.ul =</span> <span class="dv">2</span>,
+  <span class="dt">label1 =</span> <span class="st">"Estimate 1"</span>,
+  <span class="dt">label2 =</span> <span class="st">"Estimate 2"</span>,
+  <span class="dt">xlabel =</span> <span class="st">"Relative Risk"</span>
+)</code></pre></div>
 <pre><code>## Confidence interval type is  95%CI</code></pre>
 <p><img src="pvalueplot_files/figure-html/unnamed-chunk-3-1.png" width="576"></p>
 </div>

@@ -39,12 +39,12 @@ Textbook website: [krothman.org](http://krothman.org/)
 
 ## Functions
 
-**Note** - only 1 function has been mapped to R so far!
+**Note** - only a few functions have been mapped to R so far!
 
-* Rate Data				
+* Rate Data	(mapped)			
 * Case-control Power				
 * Matched Case-control data						
-* Risk Data				
+* Risk Data	(mapped)							
 * Study Size				
 * O. R. Exact						
 * Case-control Data				
@@ -60,4 +60,4 @@ Textbook website: [krothman.org](http://krothman.org/)
 
 ## Complete excel tool
 
-This package currently contains only one function. The complete set is available via the excel tool [episheet](http://krothman.org/Episheet.xls).
+This package currently contains functions for calculating rate ratios and differences, risk ratios and differences, Mantel Haenzsel risk ratio. The complete set is available via the excel tool [episheet](http://krothman.org/Episheet.xls).

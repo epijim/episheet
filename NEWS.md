@@ -1,3 +1,11 @@
+
+# episheet 0.3.9999
+
+Added function to calculate rate ratios and rate differences. 
+Also fixed bug in which confidence intervals for risk ratios and risk differences did not calculate correctly. 
+
+Added example cohort data on ebola survival. 
+
 # episheet 0.3.0
 
 Simon added functions for calculating risk ratios, risk differences and MH risk ratios for stratified risks. 
