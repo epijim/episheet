@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • episheet</title>
+<title>ebola data — ebola • episheet</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,7 +28,12 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="ebola data — ebola" />
+
+<meta property="og:description" content="Person-time data for death from ebola. Data from
+https://datacompass.lshtm.ac.uk/599/
+ Marks, M. Learning Clinical Epidemiology with R. (Project). London School of Hygiene &amp; Tropical Medicine, London, United Kingdom." />
+<meta name="twitter:card" content="summary" />
 
 
 <!-- mathjax -->
@@ -43,7 +48,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -104,71 +109,47 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>ebola data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/epijim/episheet/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>ebola.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Person-time data for death from ebola. Data from
+https://datacompass.lshtm.ac.uk/599/
+ Marks, M. Learning Clinical Epidemiology with R. (Project). London School of Hygiene &amp; Tropical Medicine, London, United Kingdom.</p>
+    
+    </div>
 
-    <colgroup>
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='no'>ebola</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        <!--  -->
-        <td>
-          <p><code><a href="ebola.html">ebola</a></code> </p>
-        </td>
-        <td><p>ebola data</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="pvalueplot.html">pvalueplot()</a></code> </p>
-        </td>
-        <td><p>Plot the p-value function</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="rate.html">rate()</a></code> </p>
-        </td>
-        <td><p>Calculate risk ratio and risk difference</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="risk.html">risk()</a></code> </p>
-        </td>
-        <td><p>Calculate risk ratio and risk difference</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="stratified_risk.html">stratified_risk()</a></code> </p>
-        </td>
-        <td><p>Stratified risk</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="tolbutamide.html">tolbutamide</a></code> </p>
-        </td>
-        <td><p>tolbutamide data - chapter 15-1, p260</p></td>
-      </tr>
-    </tbody>
-    </table>
+    <p>A dataframe</p><dl class='dl-horizontal'>
+   <dt>id</dt><dd><p>Unique patient identifier</p></dd>
+   <dt>age</dt><dd><p>Age in years</p></dd>
+   <dt>age_group</dt><dd><p>Grouped age</p></dd>
+   <dt>sex</dt><dd><p>Sex</p></dd>
+   <dt>disease_onset</dt><dd><p>Date of onset (date class)</p></dd>
+   <dt>disease_ended</dt><dd><p>Date of death or recovery (date class)</p></dd>
+   <dt>days_at_risk</dt><dd><p>Number of days at risk of death</p></dd>
+   <dt>status</dt><dd><p>Died or recovered (string)</p></dd>
+   <dt>transmission</dt><dd><p>How ebola was transmitted</p></dd>
+   <dt>died</dt><dd><p>Integer 1 = died, 0 = survived</p></dd>
+</dl>
+    
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      
+      <li><a href="#format">Format</a></li>
+          </ul>
+
   </div>
 </div>
 
