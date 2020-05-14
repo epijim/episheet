@@ -44,9 +44,9 @@ risk <- function(data, exposure, outcome, ci_level = 95){
 
   # p 248 for formulae
   A1 <- data %>% dplyr::filter(!!exposure == 1 & !!outcome == 1) %>%
-    dplyr::summarise(n = n()) %>% dplyr::pull()
+    dplyr::summarise(n = dplyr::n()) %>% dplyr::pull()
   A0 <- data %>% dplyr::filter(!!exposure == 0 & !!outcome == 1) %>%
-    dplyr::summarise(n = n()) %>% dplyr::pull()
+    dplyr::summarise(n = dplyr::n()) %>% dplyr::pull()
   B1 <- data %>% dplyr::filter(!!exposure == 1 & !!outcome == 0) %>%
     dplyr::summarise(n = max(dplyr::row_number(!!exposure))) %>% dplyr::pull()
   B0 <- data %>% dplyr::filter(!!exposure == 0 & !!outcome == 0) %>%
@@ -72,7 +72,7 @@ risk <- function(data, exposure, outcome, ci_level = 95){
 
   z <- data %>%
     dplyr::group_by(!!exposure) %>%
-    dplyr::summarise(n = n(), outcome = sum(!!outcome)) %>%
+    dplyr::summarise(n = dplyr::n(), outcome = sum(!!outcome)) %>%
     dplyr::ungroup() %>%
     dplyr::mutate(risk = (outcome / n) * 100,
                   base_risk = risk[dplyr::row_number(risk) == 1],

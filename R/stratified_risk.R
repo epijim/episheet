@@ -48,20 +48,20 @@ stratified_risk <- function(data, exposure, outcome, stratifier, ci_level = 95){
 
   totals <- data %>%
     dplyr::group_by(!!stratifier) %>%
-    dplyr::summarise(Ts = n(), Tc = sum(!!outcome)) %>%
+    dplyr::summarise(Ts = dplyr::n(), Tc = sum(!!outcome)) %>%
     dplyr::ungroup()
 
   exposed_totals <- data %>%
     dplyr::filter(!!exposure == 1) %>%
     dplyr::group_by(!!stratifier) %>%
-    dplyr::summarise(Te = n(), Tec = sum(!!outcome)) %>%
+    dplyr::summarise(Te = dplyr::n(), Tec = sum(!!outcome)) %>%
     dplyr::ungroup()
 
 
   unexposed_totals <- data %>%
     dplyr::filter(!!exposure == 0) %>%
     dplyr::group_by(!!stratifier) %>%
-    dplyr::summarise(Tu = n(), Tuc = sum(!!outcome)) %>%
+    dplyr::summarise(Tu = dplyr::n(), Tuc = sum(!!outcome)) %>%
     dplyr::ungroup()
 
   aN0 <- totals %>%
@@ -82,7 +82,7 @@ stratified_risk <- function(data, exposure, outcome, stratifier, ci_level = 95){
 
   z <- data %>%
     dplyr::group_by(!!stratifier) %>%
-    dplyr::summarise(n = n(), exposed = sum(!!exposure), outcome = sum(!!outcome)) %>%
+    dplyr::summarise(n = dplyr::n(), exposed = sum(!!exposure), outcome = sum(!!outcome)) %>%
     dplyr::left_join(., aN0) %>%
     dplyr::ungroup() %>%
     dplyr::mutate(
