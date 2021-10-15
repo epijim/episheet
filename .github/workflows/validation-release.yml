@@ -24,7 +24,7 @@ jobs:
           # R package root path, in case your R package is within a subdirectory of the repo
           report_pkg_dir: "."
           # Template location
-          report_template_path: ".github/validation_template.rmd"
+          report_template_path: ".github/validation_template.Rmd"
           # Report format - provided to `rmarkdown::render` `output_format`
           report_rmarkdown_format: "pdf_document"
 
