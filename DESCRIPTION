@@ -1,7 +1,7 @@
 Package: episheet
 Type: Package
 Title: Rothman's Episheet
-Version: 0.3.0
+Version: 0.4.1
 Authors@R: c(
     person("James", "Black", , "james@epijim.uk", c("aut", "cre")),
     person("Ken Rothman", role = "cph"),
