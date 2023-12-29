@@ -22,3 +22,6 @@ jobs:
   coverage:
     name: Code Coverage
     uses: phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main
+  links:
+    name: Links
+    uses: phuse-org/devops-toolkit/.github/workflows/urlchecker.yml@main
