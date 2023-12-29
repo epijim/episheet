@@ -1,13 +1,13 @@
 # episheet
 
-R functions for Modern Epidemiology.
+R functions for Modern Epidemiology. 
 
 ## CRAN details
 
 <table>
   <tr>
     <td><strong>Link to CRAN entry</strong></td>
-    <td><a href="http://cran.r-project.org/package=episheet"><strong>http://cran.r-project.org/package=episheet</strong></a></td>
+    <td><a href="https://cran.r-project.org/web/packages/episheet/index.html"><strong>https://cran.r-project.org/web/packages/episheet/index.html</strong></a></td>
   </tr>
   <tr>
     <td><strong>Unix build status of last commit</strong><p><sup>Passing if devtools::check() error free</sup></p></td>
