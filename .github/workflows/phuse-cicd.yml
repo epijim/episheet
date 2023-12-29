@@ -16,6 +16,12 @@ on:
   workflow_dispatch:
 
 jobs:
+  check:
+    name: Check
+    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main
+  coverage:
+    name: Code Coverage
+    uses: phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main
   links:
     name: Links
-    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main
+    uses: phuse-org/devops-toolkit/.github/workflows/urlchecker.yml@main

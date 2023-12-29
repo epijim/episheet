@@ -11,7 +11,7 @@ Authors@R: c(
 Maintainer: James Black <james@epijim.uk>
 Description: A collection of R functions supporting the text book
   Modern Epidemiology, Second Edition, by Kenneth J.Rothman and Sander Greenland.
-  ISBN 13: 978-0781755641  See <http://www.krothman.org/> for more information.
+  ISBN 13: 978-0781755641 
 License: GPL (>= 2)
 URL: https://github.com/epijim/episheet
 BugReports: https://github.com/epijim/episheet/issues

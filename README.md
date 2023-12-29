@@ -29,7 +29,7 @@ This package is functions to support the text book
 
 > Modern Epidemiology, Second Edition, by Kenneth J. Rothman and Sander Greenland.
 
-Textbook website: [krothman.org](http://krothman.org/)
+Textbook website was hosted at krothman.org, but it appears that site is now down.
 
 ## Functions
 
@@ -45,7 +45,6 @@ Textbook website: [krothman.org](http://krothman.org/)
 * Quickcalc				
 * P-Value Functions
     + `pvalueplot` Plot a p-value function
-    + [Example of use](https://cran.r-project.org/web/packages/episheet/vignettes/pvalueplot.html)
 * Standardization				
 * Seasonal Analysis				
 * Meta-Analysis (contributed by T. Andersson & A. Ahlbom)						
@@ -54,4 +53,4 @@ Textbook website: [krothman.org](http://krothman.org/)
 
 ## Complete excel tool
 
-This package currently contains functions for calculating rate ratios and differences, risk ratios and differences, Mantel Haenzsel risk ratio. The complete set is available via the excel tool [episheet](http://krothman.org/Episheet.xls).
+This package currently contains functions for calculating rate ratios and differences, risk ratios and differences, Mantel Haenzsel risk ratio. The complete set was available via the excel tool episheet, but Rothman's website hosting it appears now to be down.
