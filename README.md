@@ -45,7 +45,6 @@ Textbook website was hosted at krothman.org, but it appears that site is now dow
 * Quickcalc				
 * P-Value Functions
     + `pvalueplot` Plot a p-value function
-    + [Example of use](https://cran.r-project.org/web/packages/episheet/vignettes/pvalueplot.html)
 * Standardization				
 * Seasonal Analysis				
 * Meta-Analysis (contributed by T. Andersson & A. Ahlbom)						
