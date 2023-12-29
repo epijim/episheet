@@ -16,6 +16,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  links:
-    name: Links
+  check:
+    name: Check
     uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main
