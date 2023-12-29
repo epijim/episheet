@@ -6,10 +6,6 @@ R functions for Modern Epidemiology.
 
 <table>
   <tr>
-    <td><strong>Link to CRAN entry</strong></td>
-    <td><a href="https://cran.r-project.org/web/packages/episheet/index.html"><strong>https://cran.r-project.org/web/packages/episheet/index.html</strong></a></td>
-  </tr>
-  <tr>
     <td><strong>Unix build status of last commit</strong><p><sup>Passing if devtools::check() error free</sup></p></td>
     <td><img src="https://travis-ci.org/epijim/episheet.svg?branch=master" alt="Badge"></td>
   </tr>
