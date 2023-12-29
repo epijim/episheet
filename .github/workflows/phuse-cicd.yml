@@ -1,0 +1,21 @@
+name: Run R-CMD-check
+# sourced from phuse-org/devops-toolkit
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  links:
+    name: Links
+    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main
