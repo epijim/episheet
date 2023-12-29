@@ -10,4 +10,4 @@ jobs:
     name: Pkgdown Docs 📚
     uses: phuse-org/devops-toolkit/.github/workflows/pkgdown.yml@main
     secrets:
-      REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+      REPO_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
